@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var assetsPath = path.resolve(__dirname, '../ppe/');
 var projectRootPath = path.join(__dirname, '../');
@@ -18,7 +19,7 @@ module.exports = {
     },
     output: {
         path: assetsPath,
-        filename: 'bundle.js',
+        filename: '[hash].bundle.js',
         publicPath: publicPath
     },
     module: {
@@ -43,16 +44,10 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new ExtractTextPlugin('[name].css', { allChunks: true }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: path.resolve(__dirname, '../views/new.ejs')
+        }),
         new webpack.NoErrorsPlugin()
     ]
 };
-
-// var publicPath = '';
-
-// if(process.env.NODE_ENV == 'development') {
-//     // publicPath = 'http://192.168.2.228:8080/';
-//     publicPath = 'http://dev.s.56qq.cn/staticAG/ppe/dev/';
-// } else if(process.env.NODE_ENV == 'production') {
-//     publicPath = 'http://s.56qq.cn/staticAG/ppe/dev/';
-// }
-

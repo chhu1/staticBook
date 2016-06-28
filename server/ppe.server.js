@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('ppe'));
 
 app.use('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../views/ppe.html'))
+    res.sendFile(path.resolve(__dirname, '../ppe/index.html'))
 });
 
 app.listen(port, () => {

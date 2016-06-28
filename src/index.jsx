@@ -7,6 +7,7 @@ import configureStore from './store/configureStore';
 import createRoutes from './routes';
 
 import './static/css/common.scss';
+import './vendor/flexible.js';
 
 const store = configureStore();
 const history = useRouterHistory(createHashHistory)();

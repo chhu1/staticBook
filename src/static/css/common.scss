@@ -5,29 +5,37 @@
 }
 
 html {
-    background: #ffffff;
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 body {
     outline: 0;
-    height: auto !important;
-    font: 14px "Microsoft YaHei", Arial, Helvetica, sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -o-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
+    font: 12px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 input,
 select,
 textarea {
-    font-size: 100%
+    font-size: 100%;
 }
 
 input,
 button,
 a,
 i {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-appearance: none;
 }
 
@@ -73,26 +81,18 @@ h4,
 h5,
 h6 {
     font-size: 100%;
-    font-weight: 500
+    font-weight: 500;
 }
 
 q:before,
 q:after {
-    content: ''
+    content: '';
 }
 
 a:hover {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 a {
-    text-decoration: none
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
+    text-decoration: none;
 }

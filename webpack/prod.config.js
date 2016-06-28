@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var assetsPath = path.resolve(__dirname, '../dist');
 var projectRootPath = path.resolve(__dirname, '../');
@@ -18,7 +19,7 @@ module.exports = {
     },
     output: {
         path: assetsPath,
-        filename: 'bundle.js',
+        filename: '[hash].bundle.js',
         publicPath: publicPath
     },
     module: {
@@ -44,6 +45,10 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new ExtractTextPlugin('[name].css', { allChunks: true }),
         new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: path.resolve(__dirname, '../views/new.ejs')
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"'
         }),
