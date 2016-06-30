@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@function pxRem($px, $base-font-size: 75px) {
+    @if (unitless($px)) {
+        @return pxRem($px + 0px);
+    }
+    @else if (unit($px)==rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
+
+$font24: pxRem(24);
+$font28: pxRem(28);
+$font32: pxRem(32);
+$colBorDeep: #dddddd;
+$colBorLight: #dfdfdf;
+$colBorWhite: #ffffff;
+$colFontWhite: #ffffff;
+$colFontBlack: #333333;
+$colFontGrey: #999999;

@@ -46,7 +46,8 @@ module.exports = {
         new ExtractTextPlugin('[name].css', { allChunks: true }),
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.resolve(__dirname, '../views/new.ejs')
+            template: path.resolve(__dirname, '../views/new.ejs'),
+            favicon: path.resolve(__dirname, '../src/static/images/favicon.ico')
         }),
         new webpack.NoErrorsPlugin()
     ]

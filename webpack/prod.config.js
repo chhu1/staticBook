@@ -47,7 +47,8 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.resolve(__dirname, '../views/new.ejs')
+            template: path.resolve(__dirname, '../views/new.ejs'),
+            favicon: path.resolve(__dirname, '../src/static/images/favicon.ico')
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"'
