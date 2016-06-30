@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Login extends Component {
     render() {
         return (
             <div className="login">
-                123
+                <div>123</div>
+                <Link to="login">登陆</Link>
             </div>
         );
     }

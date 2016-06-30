@@ -60,6 +60,7 @@
     "react-router": "^2.4.0",
     "react-router-loader": "^0.5.4",
     "redux": "^3.5.2",
+    "redux-router": "^2.0.0",
     "redux-thunk": "^2.0.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",

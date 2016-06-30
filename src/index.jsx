@@ -1,20 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, useRouterHistory } from 'react-router';
-import { createHashHistory } from 'history';
 import { Provider } from 'react-redux';
+import { ReduxRouter } from 'redux-router';
+
 import configureStore from './store/configureStore';
-import createRoutes from './routes';
+import routes from './routes';
 
 import './static/css/common.scss';
 import './vendor/flexible.js';
 
-const store = configureStore();
-const history = useRouterHistory(createHashHistory)();
+const store = configureStore(routes);
 
 render(
     <Provider store={store}>
-        <Router history={history} routes={createRoutes(store)} />
+        <ReduxRouter>
+            { routes }
+        </ReduxRouter>
     </Provider>,
     document.getElementById('root')
 );
