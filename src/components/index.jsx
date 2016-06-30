@@ -1,5 +1,5 @@
-import Main from 'react-router!./Main/Main';
-import Login from 'react-router!./Login/Login';
+import Main from './Main/Main';
+import Login from './Login/Login';
 
 export const containers = {
     Main
