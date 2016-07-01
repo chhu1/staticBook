@@ -1,0 +1,15 @@
+@import '../../static/css/base.scss';
+.toast {
+    bottom: 10%;
+    left: 20%;
+    width: 60%;
+    position: fixed;
+    text-align: center;
+    height: pxRem(80);
+    font-size: $font28;
+    line-height: pxRem(80);
+    color: $colFontWhite;
+    border-radius: pxRem(8);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
