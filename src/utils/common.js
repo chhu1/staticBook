@@ -14,3 +14,14 @@ export function dateFormat(date, fmt) {
         if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
     return fmt;
 }
+
+export function addRequestParams(url, params) {
+    if (!params) {
+        return url;
+    }
+    let items = [];
+    for (let key in params) {
+        items.push(`${key}=${params[key]}`);
+    }
+    return items.length ? `${url}?${items.join('&')}` : url
+}

@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import * as MainActions from '../../actions/main';
 
+import fetch from '../../middleware/apis'
+
 class Login extends Component {
     constructor() {
         super();
@@ -13,13 +15,14 @@ class Login extends Component {
     showToast() {
         const { actions } = this.props,
             span = '123' ;
-        actions.showSimpleToast({content: `点击了${span}`})
+        actions.showSimpleToast({content: `点击了${span}`});
+        actions.fetchInfo();
     }
 
     render() {
         return (
             <div className="login">
-                <button onClick={this.showToast}>123</button>
+                <div onClick={this.showToast}>123</div>
                 <Link to="login">登陆</Link>
             </div>
         );

@@ -8,6 +8,7 @@ import routes from './routes';
 
 import './static/css/common.scss';
 import './vendor/flexible.js';
+require('es6-promise').polyfill();
 
 const store = configureStore(routes);
 
