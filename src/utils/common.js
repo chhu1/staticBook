@@ -23,5 +23,8 @@ export function addRequestParams(url, params) {
     for (let key in params) {
         items.push(`${key}=${params[key]}`);
     }
+    if (!url) {
+        return `${items.join('&')}`
+    }
     return items.length ? `${url}?${items.join('&')}` : url
 }

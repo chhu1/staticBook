@@ -1,14 +1,15 @@
 import 'whatwg-fetch';
 import assign from 'object-assign';
 import { addRequestParams } from '../utils/common';
+import { getCookieValue } from '../utils/cookie';
 
 function createFetch() {
     function get(url, data) {
-        let urlWithParams = addRequestParams(url, data)
+        let urlWithParams = addRequestParams(url, data);
         let request = new Request(urlWithParams, {
             method: 'GET',
             headers: new Headers({
-                'Content-Type': 'text/plain;charset=UTF-8'
+                'Accept': 'application/json'
             })
         });
         return fetch(request)
@@ -21,24 +22,36 @@ function createFetch() {
             })
     }
 
-    function getJson() {
-
-    }
-
-    function post() {
-
+    function post(url, data) {
+        let body = addRequestParams('', data);
+        let request = new Request(url, {
+            method: 'POST',
+            credentials: 'include',
+            headers: new Headers({
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            }),
+            body
+        });
+        return fetch(request)
+            .then(res => res.json())
+            .then(json => {
+                if (json.status == 0) {
+                    return Promise.reject(json);
+                }
+                return json;
+            })
     }
 
     return {
         get,
-        getJson,
         post
     };
 }
 
 const callApi = createFetch();
 
-export const CALL_API = Symbol('Call API');
+export const CALL_API = 'Call_API';
 
 export default store => next => action => {
     const callAPI = action[CALL_API]
@@ -80,7 +93,7 @@ export default store => next => action => {
         })),
         error => next(actionWith({
             type: failureType,
-            error: error.errorMessage || '网络错误'
+            error: error.errorMsg || '网络错误'
         }))
     )
 }

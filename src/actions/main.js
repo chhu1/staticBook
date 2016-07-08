@@ -23,9 +23,9 @@ export function fetchInfo() {
     return {
         [CALL_API]: {
             types: ['USER_REQUEST', 'USER_SUCCESS', 'USER_FAILURE'],
-            url: 'http://oa.56qq.cn/oa/mobile/organization/get-nearby-location.do',
-            fetchType: 'get',
-            params: { data: 123 }
+            url: 'http://localhost:3000/user/register.do',
+            fetchType: 'post',
+            params: { email: '1411365142@qq.com', password: '123456' }
         }
     }
 }
