@@ -53,6 +53,7 @@
     "history": "^2.1.1",
     "html-webpack-plugin": "^2.21.0",
     "immutable": "^3.8.1",
+    "keymirror": "^0.1.1",
     "node-sass": "^3.7.0",
     "object-assign": "^4.1.0",
     "raw-loader": "^0.5.1",
