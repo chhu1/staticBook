@@ -6,7 +6,7 @@ import Toast from '../Common/Toast';
 class Main extends Component {
     render() {
         return (
-            <div className="main">
+            <div className="main1">
                 {this.props.children}
                 <Toast />
             </div>

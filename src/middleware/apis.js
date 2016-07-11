@@ -8,6 +8,7 @@ function createFetch() {
         let urlWithParams = addRequestParams(url, data);
         let request = new Request(urlWithParams, {
             method: 'GET',
+            credentials: 'include',
             headers: new Headers({
                 'Accept': 'application/json'
             })
@@ -51,7 +52,7 @@ function createFetch() {
 
 const callApi = createFetch();
 
-export const CALL_API = 'Call_API';
+export const CALL_API = 'SymbolCallAPI';
 
 export default store => next => action => {
     const callAPI = action[CALL_API]

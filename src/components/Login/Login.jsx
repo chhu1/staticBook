@@ -16,14 +16,13 @@ class Login extends Component {
         const { actions } = this.props,
             span = '123' ;
         actions.showSimpleToast({content: `点击了${span}`});
-        actions.fetchInfo();
     }
 
     render() {
         return (
             <div className="login">
                 <div onClick={this.showToast}>123</div>
-                <Link to="login">登陆</Link>
+                <Link to="register">登陆</Link>
             </div>
         );
     }
