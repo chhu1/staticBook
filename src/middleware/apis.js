@@ -2,6 +2,8 @@ import 'whatwg-fetch';
 import assign from 'object-assign';
 import { addRequestParams } from '../utils/common';
 import { getCookieValue } from '../utils/cookie';
+import actionType from '../constant/actionType';
+import { showSimpleToast } from '../actions/main';
 
 function createFetch() {
     function get(url, data) {
@@ -74,8 +76,8 @@ export default store => next => action => {
     if (!Array.isArray(types) || types.length !== 3) {
         throw new Error('Expected an array of three action types.');
     }
-    if (!types.every(type => typeof type === 'string')) {
-        throw new Error('Expected action types to be strings.');
+    if (!types.every(type => typeof type === 'object')) {
+        throw new Error('Expected action type to be object.');
     }
 
     function actionWith(data) {
@@ -84,17 +86,34 @@ export default store => next => action => {
         return finalAction;
     }
 
-    const [requestType, successType, failureType] = types;
-    next(actionWith({ type: requestType }));
+    function createActions(params, response) {
+        const { showLoading, hideLoading, showToast, nextAction, responseType } = params;
+        showLoading && next(actionWith({ type: actionType.SHOW_LOADING }));
+        hideLoading && next(actionWith({ type: actionType.HIDE_LOADING }));
+        if (responseType && typeof responseType === 'string') {
+            let finalActionType = response ? { type: responseType, payload: response } : { type: responseType };
+            next(actionWith(finalActionType));
+        }
+        if (showToast && typeof showToast === 'object') {
+            let content = showToast.content ? showToast.content : (response && response.errorMsg ? response.errorMsg : '');
+            if (content) {
+                showSimpleToast({ content })(next, store.getState);
+            }
+        }
+        if (response && nextAction && typeof nextAction === 'function') {
+            nextAction(response)(next, store.getState);
+        }
+    }
+
+    const [apiStart, apiSuccess, apiFailure] = types;
+    createActions(apiStart);
 
     return callApi[fetchType](url, params).then(
-        response => next(actionWith({
-            type: successType,
-            response
-        })),
-        error => next(actionWith({
-            type: failureType,
-            error: error.errorMsg || '网络错误'
-        }))
+        response => createActions(apiSuccess, response),
+        error => createActions(apiFailure, {
+            status: 0,
+            errorMsg: error.errorMsg || '网络错误',
+            errorCode: error.errorCode || 100
+        })
     )
 }

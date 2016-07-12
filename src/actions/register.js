@@ -1,11 +1,29 @@
+import assign from 'object-assign';
 import { CALL_API } from '../middleware/apis';
+import actionType from '../constant/actionType';
 import Apis from '../apis/apis';
 
-export function registerUser() {
+export function registerUser(params) {
     return {
         [CALL_API]: Apis('userRegister')({
-            types: ['USER_REQUEST', 'USER_SUCCESS', 'USER_FAILURE'],
-            params: { email: '1411365142@qq.com', password: '123456' }
+            types: [
+                { responseType: 'userRegisterApiStart' },
+                { responseType: 'userRegisterApiSuccess' },
+                { showToast: {} }
+            ],
+            params
         })
     }
+}
+
+export function registerEmailChange(payload) {
+    return { type: actionType.REGISTER_EMAIL_CHANGE, payload };
+}
+
+export function registerPasswordChange(payload) {
+    return { type: actionType.REGISTER_PASSWORD_CHANGE, payload };
+}
+
+export function registerRepeatPasswordChange(payload) {
+    return { type: actionType.REGISTER_REPEAT_PASSWORD_CHANGE, payload };
 }

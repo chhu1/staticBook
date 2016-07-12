@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
 
 import './toast.scss';
 
@@ -20,8 +19,4 @@ Toast.propTypes = {
     content: PropTypes.string
 };
 
-function mapStateToProps(state) {
-    return state.main.toJS();
-}
-
-export default connect(mapStateToProps)(Toast);
+export default Toast;

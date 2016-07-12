@@ -13,7 +13,7 @@ export default function(state = initialState, action) {
             if (state.get('toastTimer')) {
                 clearTimeout(state.get('toastTimer'));
             }
-            let { timer, content } = action.params;
+            let { timer, content } = action.payload;
             return state.set('isShow', true).set('content', content).set('toastTimer', timer);
         case actionType.HIDE_TOAST:
             return initialState;
