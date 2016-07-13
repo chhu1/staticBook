@@ -1,7 +1,22 @@
 @import '../../static/css/base';
 
 .register {
-    height: 100%;
-    width: 100%;
-    background-color: #c5e0e9;
+    .image-wrap {
+        padding-top: pxRem(30);
+        text-align: center;
+        img {
+            width: pxRem(360);
+            margin: 0 auto;
+        }
+        .title {
+            color: $colRed;
+            font-size: pxRem(48);
+        }
+    }
+    .main-form {
+        padding: pxRem(50) pxRem(30) pxRem(30);
+        .input-group {
+            
+        }
+    }
 }

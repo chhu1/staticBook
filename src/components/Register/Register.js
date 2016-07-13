@@ -56,17 +56,19 @@ class Register extends Component {
                     <img src={require('../../static/images/book.png')} />
                     <div className="title">书香门第</div>
                 </div>
-                <div className="line">
-                    <label>邮箱</label>
-                    <input type="text" className="input" value={email} onChange={this.handleRegisterEmailChange} />
-                </div>
-                <div className="line">
-                    <label>密码</label>
-                    <input type="password" className="input" value={password} onChange={this.handleRegisterPasswordChange} />
-                </div>
-                <div className="line">
-                    <label>重复密码</label>
-                    <input type="password" className="input" value={repeatpassword} onChange={this.handleRegisterRepeatPasswordChange} />
+                <div className="main-form">
+                    <div className="input-group">
+                        <label>邮箱</label>
+                        <input type="text" className="input" value={email} onChange={this.handleRegisterEmailChange} />
+                    </div>
+                    <div className="input-group">
+                        <label>密码</label>
+                        <input type="password" className="input" value={password} onChange={this.handleRegisterPasswordChange} />
+                    </div>
+                    <div className="input-group">
+                        <label>重复密码</label>
+                        <input type="password" className="input" value={repeatpassword} onChange={this.handleRegisterRepeatPasswordChange} />
+                    </div>
                 </div>
                 <div onClick={this.handleRegisterSubmit}>注册</div>
             </div>

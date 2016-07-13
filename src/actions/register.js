@@ -1,15 +1,20 @@
-import assign from 'object-assign';
 import { CALL_API } from '../middleware/apis';
 import actionType from '../constant/actionType';
+import { showSimpleToast, changePath } from './main';
 import Apis from '../apis/apis';
 
 export function registerUser(params) {
     return {
         [CALL_API]: Apis('userRegister')({
             types: [
-                { responseType: 'userRegisterApiStart' },
-                { responseType: 'userRegisterApiSuccess' },
-                { showToast: {} }
+                'userRegisterApiStart',
+                (dispatch, getState, response) => {
+                    changePath('/login');
+                },
+                (dispatch, getState, response) => {
+                    let content = response && response.errorMsg ? response.errorMsg : '';
+                    content && showSimpleToast({ content })(dispatch);
+                }
             ],
             params
         })
