@@ -84,10 +84,7 @@ export default store => next => action => {
     }
 
     function createActions(nextAction, response) {
-        typeof nextAction === 'function' ? (
-            response ? nextAction(next, store.getState, response) : nextAction(next, store.getState)) : (
-            response ? next(actionWith({ type: nextAction, payload: response })) : next(actionWith({ type: nextAction }))
-        )
+        typeof nextAction === 'function' ? (response ? nextAction(store.dispatch, store.getState, response) : nextAction(store.dispatch, store.getState)) : (response ? next(actionWith({ type: nextAction, payload: response })) : next(actionWith({ type: nextAction })))
     }
 
     const [apiStart, apiSuccess, apiFailure] = types;

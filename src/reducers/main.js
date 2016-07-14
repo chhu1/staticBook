@@ -6,9 +6,6 @@ const initialState = Map({
         isShow: false,
         content: '',
         toastTimer: null
-    }),
-    urlAbout: Map({
-        apiCurrentPath: ''
     })
 });
 
@@ -22,8 +19,6 @@ export default function(state = initialState, action) {
             return state.setIn(['toast', 'isShow'], true).setIn(['toast', 'content'], content).setIn(['toast', 'toastTimer'], timer);
         case actionType.HIDE_TOAST:
             return state.setIn(['toast', 'isShow'], false).setIn(['toast', 'content'], '').setIn(['toast', 'toastTimer'], null);
-        case actionType.CHANGE_PATH:
-            return state.setIn(['urlAbout', 'apiCurrentPath'], action.payload)
         default:
             return state;
     }

@@ -18,7 +18,3 @@ export function showSimpleToast(payload) {
         dispatch({ type: actionType.SHOW_TOAST, payload: newPayload });
     }
 }
-
-export function changePath(payload) {
-    return { type: actionType.CHANGE_PATH, payload };
-}

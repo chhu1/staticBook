@@ -5,7 +5,6 @@ export default keyMirror({
     HIDE_TOAST: null,
     SHOW_LOADING: null,
     HIDE_LOADING: null,
-    CHANGE_PATH: null,
     REGISTER_EMAIL_CHANGE: null,
     REGISTER_PASSWORD_CHANGE: null,
     REGISTER_REPEAT_PASSWORD_CHANGE: null

@@ -2,9 +2,9 @@ import actionType from '../constant/actionType';
 import { Map } from 'immutable';
 
 const initialState = Map({
-    email: '',
-    password: '',
-    repeatpassword: ''
+    email: '12@qq.com',
+    password: '123456',
+    repeatpassword: '123456'
 });
 
 export default function(state = initialState, action) {

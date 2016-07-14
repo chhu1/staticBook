@@ -1,5 +1,6 @@
 import { CALL_API } from '../middleware/apis';
 import actionType from '../constant/actionType';
+import { push } from 'redux-router';
 import { showSimpleToast, changePath } from './main';
 import Apis from '../apis/apis';
 
@@ -8,12 +9,10 @@ export function registerUser(params) {
         [CALL_API]: Apis('userRegister')({
             types: [
                 'userRegisterApiStart',
-                (dispatch, getState, response) => {
-                    changePath('/login');
-                },
+                (dispatch, getState, response) => dispatch(push('/login')),
                 (dispatch, getState, response) => {
                     let content = response && response.errorMsg ? response.errorMsg : '';
-                    content && showSimpleToast({ content })(dispatch);
+                    content && dispatch(showSimpleToast({ content }));
                 }
             ],
             params
