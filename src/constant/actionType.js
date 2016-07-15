@@ -5,7 +5,11 @@ export default keyMirror({
     HIDE_TOAST: null,
     SHOW_LOADING: null,
     HIDE_LOADING: null,
+    REGISTER_API_LOADING: null,
     REGISTER_EMAIL_CHANGE: null,
     REGISTER_PASSWORD_CHANGE: null,
-    REGISTER_REPEAT_PASSWORD_CHANGE: null
+    REGISTER_REPEAT_PASSWORD_CHANGE: null,
+    LOGIN_API_LOADING: null,
+    LOGIN_EMAIL_CHANGE: null,
+    LOGIN_PASSWORD_CHANGE: null
 });

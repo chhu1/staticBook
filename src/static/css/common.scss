@@ -96,3 +96,18 @@ a:hover {
 a {
     text-decoration: none;
 }
+
+input {
+    outline: none;
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input::-webkit-input-placeholder {
+    color: #999999;
+}

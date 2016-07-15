@@ -1,6 +1,6 @@
 @import '../../static/css/base';
 
-.register {
+.login {
     padding-bottom: pxRem(50);
     .image-wrap {
         padding-top: pxRem(30);
@@ -65,5 +65,18 @@
         border-radius: pxRem(8);
         margin: 0 pxRem(60);
         background-color: $colBorLight;
+    }
+    .link-blue-btn {
+        display: block;
+        text-align: center;
+        color: $colBlue;
+        padding: pxRem(25);
+        height: pxRem(32);
+        font-size: $font32;
+        line-height: pxRem(32);
+        border-radius: pxRem(8);
+        margin: pxRem(30) pxRem(60) 0;
+        background-color: $colFontWhite;
+        border: 1px solid $colBlue;
     }
 }

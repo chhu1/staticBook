@@ -2,7 +2,6 @@ import assign from 'object-assign';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router';
 import * as MainActions from '../../actions/main';
 import * as RegisterActions from '../../actions/register';
 import { isEmail, passwordLength } from '../../utils/validator';
@@ -11,10 +10,15 @@ import './register.scss';
 class Register extends Component {
     constructor() {
         super();
+        this.handleFocus = this.handleFocus.bind(this);
         this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
         this.handleRegisterEmailChange = this.handleRegisterEmailChange.bind(this);
         this.handleRegisterPasswordChange = this.handleRegisterPasswordChange.bind(this);
         this.handleRegisterRepeatPasswordChange = this.handleRegisterRepeatPasswordChange.bind(this);
+    }
+
+    handleFocus(e) {
+        e.currentTarget.getElementsByTagName('input')[0].focus();
     }
 
     handleRegisterEmailChange(e) {
@@ -30,18 +34,18 @@ class Register extends Component {
     }
 
     handleRegisterRepeatPasswordChange(e) {
-        const repeatpassword = e.target.value.trim();
+        const repeatPassword = e.target.value.trim();
         const { actions } = this.props;
-        actions.registerRepeatPasswordChange(repeatpassword);
+        actions.registerRepeatPasswordChange(repeatPassword);
     }
 
     handleRegisterSubmit() {
-        const { email, password, repeatpassword, actions } = this.props;
+        const { email, password, repeatPassword, actions } = this.props;
         if (!isEmail(email)) {
             actions.showSimpleToast({ content: '邮箱格式错误'});
         } else if (!passwordLength(password)) {
             actions.showSimpleToast({ content: '密码长度必须6至16位'});
-        } else if (password !== repeatpassword) {
+        } else if (password !== repeatPassword) {
             actions.showSimpleToast({ content: '重复密码不一致'});
         } else {
             actions.registerUser({ email: email, password: password});
@@ -49,7 +53,7 @@ class Register extends Component {
     }
 
     render() {
-        const { email, password, repeatpassword } = this.props;
+        const { email, password, repeatPassword, apiLoading } = this.props;
         return (
             <div className="register">
                 <div className="image-wrap">
@@ -57,20 +61,26 @@ class Register extends Component {
                     <div className="title">书香门第</div>
                 </div>
                 <div className="main-form">
-                    <div className="input-group">
-                        <label>邮箱</label>
-                        <input type="text" className="input" value={email} onChange={this.handleRegisterEmailChange} />
+                    <div className="input-group" onClick={this.handleFocus}>
+                        <img src={require('../../static/images/icon_email.png')} />
+                        <div className="input-span">邮箱：</div>
+                        <input type="text" className="text-input" value={email} onChange={this.handleRegisterEmailChange} placeholder="请输入邮箱"/>
                     </div>
-                    <div className="input-group">
-                        <label>密码</label>
-                        <input type="password" className="input" value={password} onChange={this.handleRegisterPasswordChange} />
+                    <div className="input-group" onClick={this.handleFocus}>
+                        <img src={require('../../static/images/icon_password.png')} />
+                        <div className="input-span">密码：</div>
+                        <input type="password" className="text-input" value={password} onChange={this.handleRegisterPasswordChange} placeholder="请输入密码"/>
                     </div>
-                    <div className="input-group">
-                        <label>重复密码</label>
-                        <input type="password" className="input" value={repeatpassword} onChange={this.handleRegisterRepeatPasswordChange} />
+                    <div className="input-group" onClick={this.handleFocus}>
+                        <img src={require('../../static/images/icon_password.png')} />
+                        <div className="input-span">重复密码：</div>
+                        <input type="password" className="text-input" value={repeatPassword} onChange={this.handleRegisterRepeatPasswordChange} placeholder="请输入重复密码"/>
                     </div>
                 </div>
-                <div onClick={this.handleRegisterSubmit}>注册</div>
+                {
+                    apiLoading ? <div className="grey-btn">注册</div> :
+                    <div className="blue-btn" onClick={this.handleRegisterSubmit}>注册</div>
+                }
             </div>
         );
     }
@@ -79,7 +89,8 @@ class Register extends Component {
 Register.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
-    repeatpassword: PropTypes.string,
+    repeatPassword: PropTypes.string,
+    apiLoading: PropTypes.bool,
     actions: PropTypes.object
 }
 
