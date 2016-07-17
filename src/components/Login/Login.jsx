@@ -5,20 +5,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as MainActions from '../../actions/main';
 import * as LoginActions from '../../actions/login';
+import { EmailInput, PasswordInput } from '../Common/Input';
 import { isEmail, passwordLength } from '../../utils/validator';
 import './login.scss';
 
 class Login extends Component {
     constructor() {
         super();
-        this.handleFocus = this.handleFocus.bind(this);
         this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
         this.handleLoginEmailChange = this.handleLoginEmailChange.bind(this);
         this.handleLoginPasswordChange = this.handleLoginPasswordChange.bind(this);
-    }
-
-    handleFocus(e) {
-        e.currentTarget.getElementsByTagName('input')[0].focus();
     }
 
     handleLoginEmailChange(e) {
@@ -53,16 +49,8 @@ class Login extends Component {
                     <div className="title">书香门第</div>
                 </div>
                 <div className="main-form">
-                    <div className="input-group" onClick={this.handleFocus}>
-                        <img src={require('../../static/images/icon_email.png')} />
-                        <div className="input-span">邮箱：</div>
-                        <input type="text" className="text-input" value={email} onChange={this.handleLoginEmailChange} placeholder="请输入邮箱"/>
-                    </div>
-                    <div className="input-group" onClick={this.handleFocus}>
-                        <img src={require('../../static/images/icon_password.png')} />
-                        <div className="input-span">密码：</div>
-                        <input type="password" className="text-input" value={password} onChange={this.handleLoginPasswordChange} placeholder="请输入密码"/>
-                    </div>
+                    <EmailInput value={email} handleChange={this.handleLoginEmailChange} />
+                    <PasswordInput value={password} handleChange={this.handleLoginPasswordChange} />
                 </div>
                 {
                     apiLoading ? <div className="grey-btn">登陆</div> :

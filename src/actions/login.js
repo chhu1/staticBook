@@ -1,7 +1,7 @@
 import { CALL_API } from '../middleware/apis';
 import actionType from '../constant/actionType';
 import { push } from 'redux-router';
-import { showSimpleToast, changePath } from './main';
+import { showSimpleToast } from './main';
 import Apis from '../apis/apis';
 
 export function loginUser(params) {

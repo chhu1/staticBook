@@ -8,10 +8,10 @@ class Main extends Component {
     render() {
         const { isShow, content } = this.props.toast;
         return (
-            <div className="main">
+            <section className="main">
                 {this.props.children}
                 <Toast isShow={isShow} content={content} />
-            </div>
+            </section>
         );
     }
 }

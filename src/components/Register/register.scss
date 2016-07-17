@@ -1,5 +1,4 @@
 @import '../../static/css/base';
-
 .register {
     padding-bottom: pxRem(50);
     .image-wrap {
@@ -16,33 +15,6 @@
     }
     .main-form {
         padding: pxRem(50) pxRem(50) pxRem(30);
-        .input-group {
-            color: $colFontBlack;
-            display: -webkit-box;
-            -webkit-box-pack: start;
-            border-radius: pxRem(6);
-            margin: pxRem(20) 0;
-            padding: pxRem(5) pxRem(15);
-            height: pxRem(64);
-            border: 1px solid $colBorLight;
-            font-size: $font32;
-            img {
-                padding: pxRem(12) 0;
-                width: pxRem(40);
-                height: pxRem(40);
-            }
-            .input-span {
-                height: pxRem(32);
-                line-height: pxRem(32);
-                padding: pxRem(16) pxRem(10);
-            }
-            .text-input {
-                font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
-                padding: pxRem(10) 0;
-                height: pxRem(44);
-                line-height: pxRem(44);
-            }
-        }
     }
     .blue-btn {
         text-align: center;
