@@ -26,4 +26,4 @@ function mapStateToProps(state) {
     return state.main.toJS();
 }
 
-export default connect(mapStateToProps)(Main);;
+export default connect(mapStateToProps)(Main);

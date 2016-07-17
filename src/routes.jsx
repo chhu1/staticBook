@@ -7,5 +7,8 @@ module.exports = (
         <IndexRoute component={components.Login} />
         <Route path="login" component={components.Login} />
         <Route path="register" component={components.Register} />
+        <Route component={containers.Container}>
+            <Route path="discovery" component={components.Discovery} />
+        </Route>
     </Route>
 );

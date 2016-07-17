@@ -1,7 +1,7 @@
 import { CALL_API } from '../middleware/apis';
 import actionType from '../constant/actionType';
 import { push } from 'redux-router';
-import { showSimpleToast, changePath } from './main';
+import { simpleApiFailToast } from './utils';
 import Apis from '../apis/apis';
 
 export function registerUser(params) {
@@ -20,8 +20,7 @@ export function registerUser(params) {
                 (dispatch, getState, response) => {
                     let payload = false;
                     dispatch({ type: actionType.REGISTER_API_LOADING, payload });
-                    let content = response && response.errorMsg ? response.errorMsg : '';
-                    content && dispatch(showSimpleToast({ content }));
+                    simpleApiFailToast(dispatch, response);
                 }
             ],
             params
