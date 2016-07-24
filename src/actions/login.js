@@ -1,8 +1,9 @@
-import { CALL_API } from '../middleware/apis';
-import actionType from '../constant/actionType';
 import { push } from 'redux-router';
-import { simpleApiFailToast } from './utils';
+import { CALL_API } from '../middleware/apis';
+
 import Apis from '../apis/apis';
+import actionType from '../constant/actionType';
+import { simpleApiFailToast, setUserInfomation } from './utils';
 
 export function loginUser(params) {
     return {
@@ -15,7 +16,7 @@ export function loginUser(params) {
                 (dispatch, getState, response) => {
                     let payload = false;
                     dispatch({ type: actionType.LOGIN_API_LOADING, payload });
-                    // dispatch(push('/discovery'));
+                    setUserInfomation(dispatch, response) && dispatch(push('/discovery'));
                 },
                 (dispatch, getState, response) => {
                     let payload = false;
