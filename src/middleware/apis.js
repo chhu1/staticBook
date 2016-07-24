@@ -7,7 +7,6 @@ function createFetch() {
         let urlWithParams = addRequestParams(url, data);
         let request = new Request(urlWithParams, {
             method: 'GET',
-            credentials: 'include',
             headers: new Headers({
                 'Accept': 'application/json'
             })
@@ -26,7 +25,6 @@ function createFetch() {
         let body = addRequestParams('', data);
         let request = new Request(url, {
             method: 'POST',
-            credentials: 'include',
             headers: new Headers({
                 'Accept': 'application/json',
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'

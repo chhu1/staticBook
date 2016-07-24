@@ -1,7 +1,7 @@
 import assign from 'object-assign';
 
 export default function(key) {
-    const API_DOMAIN = 'http://192.168.0.108:3000';
+    const API_DOMAIN = 'http://192.168.0.109:3000';
     const Apis = {
         userRegister: function(opts) {
             return assign({}, {
