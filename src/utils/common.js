@@ -1,6 +1,4 @@
-export function dateFormat(date, fmt) {
-    date = date || new Date;
-    fmt = fmt || 'yyyy-MM-dd hh:mm:ss';
+export function dateFormat(date = new Date, fmt = 'yyyy-MM-dd') {
     var _date = new Date(date);
     var o = {
         'M+': _date.getMonth() + 1,

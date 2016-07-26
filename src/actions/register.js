@@ -6,7 +6,7 @@ import Apis from '../apis/apis';
 
 export function registerUser(params) {
     return {
-        [CALL_API]: Apis('userRegister')({
+        [CALL_API]: Apis['userRegister']({
             types: [
                 (dispatch, getState) => {
                     let payload = true;

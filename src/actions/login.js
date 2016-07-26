@@ -7,7 +7,7 @@ import { simpleApiFailToast, setUserInfomation } from './utils';
 
 export function loginUser(params) {
     return {
-        [CALL_API]: Apis('userLogin')({
+        [CALL_API]: Apis['userLogin']({
             types: [
                 (dispatch, getState) => {
                     let payload = true;
