@@ -7,3 +7,7 @@ export function changeBottomNav(payload) {
         dispatch({ type: actionType.CHANGE_BOTTOM_NAV, payload });
     }
 }
+
+export function setBottomNavActive(payload) {
+    return { type: actionType.SET_BOTTOM_NAV_ACTIVE, payload };
+}

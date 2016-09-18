@@ -12,6 +12,11 @@ class Container extends Component {
         this.changeBottomNav = this.changeBottomNav.bind(this);
     }
 
+    componentDidMount() {
+        const { actions, location: { pathname } } = this.props;
+        actions.setBottomNavActive(pathname.slice(1));
+    }
+
     changeBottomNav(e) {
         const { actions } = this.props;
         actions.changeBottomNav(e.currentTarget.getAttribute('data-param'));
@@ -29,6 +34,8 @@ class Container extends Component {
 }
 
 Container.propTypes = {
+    changeBottomNav: PropTypes.func,
+    activeBottomNav: PropTypes.string,
     children: PropTypes.element,
     actions: PropTypes.object
 }

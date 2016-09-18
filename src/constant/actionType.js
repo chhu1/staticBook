@@ -12,5 +12,6 @@ export default keyMirror({
     LOGIN_API_LOADING: null,
     LOGIN_EMAIL_CHANGE: null,
     LOGIN_PASSWORD_CHANGE: null,
-    CHANGE_BOTTOM_NAV: null
+    CHANGE_BOTTOM_NAV: null,
+    SET_BOTTOM_NAV_ACTIVE: null
 });
