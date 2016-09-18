@@ -1,0 +1,26 @@
+@import '../../static/css/base';
+.bottom-nav {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    -webkit-box-pack: start;
+    background-color: #ffffff;
+    border-top: 1px solid $colBorDeep;
+    .nav-item {
+        width: 33.33%;
+        text-align: center;
+        color: $colFontGrey;
+        img {
+            width: pxRem(48);
+            height: pxRem(48);
+        }
+        p {
+            font-size: $font28;
+        }
+        &.active {
+            color: $colBlue;
+        }
+    }
+}

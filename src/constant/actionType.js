@@ -11,5 +11,6 @@ export default keyMirror({
     REGISTER_REPEAT_PASSWORD_CHANGE: null,
     LOGIN_API_LOADING: null,
     LOGIN_EMAIL_CHANGE: null,
-    LOGIN_PASSWORD_CHANGE: null
+    LOGIN_PASSWORD_CHANGE: null,
+    CHANGE_BOTTOM_NAV: null
 });

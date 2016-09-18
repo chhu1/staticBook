@@ -5,6 +5,7 @@ class Discovery extends Component {
     render() {
         return (
             <section className="discovery">
+                <div>Page: Discovery</div>
                 {
                     getCookieValue('token')
                 }

@@ -9,6 +9,8 @@ module.exports = (
         <Route path="register" component={components.Register} />
         <Route component={containers.Container}>
             <Route path="discovery" component={components.Discovery} />
+            <Route path="news" component={components.News} />
+            <Route path="mine" component={components.Mine} />
         </Route>
     </Route>
 );
