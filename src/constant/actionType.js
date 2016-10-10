@@ -13,5 +13,7 @@ export default keyMirror({
     LOGIN_EMAIL_CHANGE: null,
     LOGIN_PASSWORD_CHANGE: null,
     CHANGE_BOTTOM_NAV: null,
-    SET_BOTTOM_NAV_ACTIVE: null
+    SET_BOTTOM_NAV_ACTIVE: null,
+    DISCOVER_BOOK_LIST_API_LOADING: null,
+    SET_BOOK_LIST_STATE: null
 });
