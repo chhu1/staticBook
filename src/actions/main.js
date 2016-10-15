@@ -9,6 +9,14 @@ export function hideToast() {
     return { type: actionType.HIDE_TOAST };
 }
 
+export function showLoading() {
+    return { type: actionType.SHOW_LOADING };
+}
+
+export function hideLoading() {
+    return { type: actionType.HIDE_LOADING };
+}
+
 export function showSimpleToast(payload) {
     return dispatch => {
         let timer = setTimeout(() => {

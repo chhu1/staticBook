@@ -2,23 +2,30 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Toast from '../Common/Toast';
+import Loading from '../Common/Loading';
 
 class Main extends Component {
 
     render() {
-        const { isShow, content } = this.props.toast;
+        const { toast: { isShowToast, content }, loading: { isShowLoading } } = this.props;
         return (
             <section className="main">
                 {this.props.children}
-                <Toast isShow={isShow} content={content} />
+                <Toast isShow={isShowToast} content={content} />
+                <Loading isShow={isShowLoading} />
             </section>
         );
     }
 }
 
 Main.propTypes = {
-    isShow: PropTypes.bool,
-    content: PropTypes.string,
+    toast: PropTypes.shape({
+        content: PropTypes.string,
+        isShowToast: PropTypes.bool
+    }),
+    loading: PropTypes.shape({
+        isShowLoading: PropTypes.bool
+    }),
     children: PropTypes.element
 }
 

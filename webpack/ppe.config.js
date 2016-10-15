@@ -17,7 +17,7 @@ module.exports = webpackMerge(baseConfig, {
         main: [
             path.resolve(__dirname, '../src/index.jsx')
         ],
-        vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router', 'history', 'immutable']
+        vendor: ['babel-polyfill', 'es6-promise', 'react', 'react-dom', 'react-router', 'history', 'immutable']
     },
     output: {
         path: assetsPath,

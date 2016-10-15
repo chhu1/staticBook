@@ -27,7 +27,7 @@ function createFetch() {
             method: 'POST',
             headers: new Headers({
                 'Accept': 'application/json',
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
             }),
             body
         });
