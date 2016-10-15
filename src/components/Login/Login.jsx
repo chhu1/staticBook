@@ -31,10 +31,6 @@ class Login extends Component {
 
     handleLoginSubmit() {
         const { email, password, actions } = this.props;
-        actions.showLoading();
-        setTimeout(function() {
-            actions.hideLoading();
-        }, 3000)
         if (!isEmail(email)) {
             actions.showSimpleToast({ content: '邮箱格式错误'});
         } else if (!passwordLength(password)) {
