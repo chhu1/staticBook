@@ -1,5 +1,7 @@
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 
+@pureRender
 class Mine extends Component {
     render() {
         return (

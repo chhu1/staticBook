@@ -1,11 +1,12 @@
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Toast from '../Common/Toast';
 import Loading from '../Common/Loading';
 
+@pureRender
 class Main extends Component {
-
     render() {
         const { toast: { isShowToast, content }, loading: { isShowLoading } } = this.props;
         return (

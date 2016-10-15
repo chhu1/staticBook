@@ -1,7 +1,9 @@
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 
 import './bottomNav.scss';
 
+@pureRender
 class BottomNav extends Component {
     render() {
         const { activeBottomNav, changeBottomNav } = this.props;

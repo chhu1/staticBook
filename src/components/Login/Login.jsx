@@ -1,4 +1,5 @@
 import assign from 'object-assign';
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
@@ -9,6 +10,7 @@ import { EmailInput, PasswordInput } from '../Common/Input';
 import { isEmail, passwordLength } from '../../utils/validator';
 import './login.scss';
 
+@pureRender
 class Login extends Component {
     constructor() {
         super();

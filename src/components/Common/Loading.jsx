@@ -1,7 +1,9 @@
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 
 import './loading.scss';
 
+@pureRender
 class Loading extends Component {
     render() {
         const { isShow } = this.props;

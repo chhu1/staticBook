@@ -1,6 +1,8 @@
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 import './input.scss';
 
+@pureRender
 class SimpleInput extends Component {
     constructor() {
         super();

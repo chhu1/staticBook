@@ -1,4 +1,5 @@
 import assign from 'object-assign';
+import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
@@ -6,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import * as MainActions from '../../actions/main';
 import * as discoveryActions from '../../actions/discovery';
 
+@pureRender
 class Discovery extends Component {
     componentDidMount() {
         const { actions } = this.props;
