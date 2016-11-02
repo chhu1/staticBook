@@ -5,7 +5,7 @@ const API_DOMAIN = 'http://192.168.0.104:3000';
 const API_SOURCE = {
     userRegister: { url: '/user/register.do', fetchType: 'post', noToken: true },
     userLogin: { url: '/user/login.do', fetchType: 'post', noToken: true },
-    getBookList: { url: '/book/all/list.do', fetchType: 'get' }
+    getBookList: { url: '/book/list.do', fetchType: 'get' }
 }
 
 function createApis() {

@@ -1,0 +1,43 @@
+@import '../../static/css/base';
+.discovery {
+    background-color: #efefef;
+    .page-loading {
+        text-align: center;
+        padding: pxRem(20);
+        img {
+            width: pxRem(48);
+            height: pxRem(48);
+        }
+    }
+    .wrap {
+        padding: pxRem(20) pxRem(20) pxRem(88);
+        .card {
+            margin-bottom: pxRem(20);
+            background-color: #ffffff;
+            border-top: pxRem(6) solid $colBlue;
+            .card-top {
+                .name {
+                    padding: pxRem(10) pxRem(20) 0;
+                    font-size: $font32;
+                }
+                .author {
+                    padding: pxRem(10) pxRem(20) 0;
+                    font-size: $font24;
+                    color: $colFontGrey;
+                }
+            }
+            .card-body {
+                .desc {
+                    padding: pxRem(10) pxRem(20) 0;
+                    font-size: $font28;
+                }
+                .company {
+                    padding: pxRem(10) pxRem(20);
+                    color: $colFontGrey;
+                    font-size: $font28;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
