@@ -12,8 +12,8 @@ class Main extends Component {
         return (
             <section className="main">
                 {this.props.children}
-                <Toast isShow={isShowToast} content={content} />
-                <Loading isShow={isShowLoading} />
+                <Toast isShow={isShowToast} content={content}/>
+                <Loading isShow={isShowLoading}/>
             </section>
         );
     }

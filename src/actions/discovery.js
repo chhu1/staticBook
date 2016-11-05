@@ -9,17 +9,14 @@ export function getBookList() {
         [CALL_API]: Apis['getBookList']({
             types: [
                 (dispatch, getState) => {
-                    let payload = true;
-                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload });
+                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload: true });
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload });
+                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload: false });
                     dispatch({ type: actionType.SET_BOOK_LIST_STATE, payload: response });
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload });
+                    dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload: false });
                     simpleApiFailToast(dispatch, response);
                 }
             ]

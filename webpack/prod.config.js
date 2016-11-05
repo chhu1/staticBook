@@ -9,7 +9,7 @@ var baseConfig = require('./base.config');
 var assetsPath = path.resolve(__dirname, '../dist');
 var projectRootPath = path.resolve(__dirname, '../');
 var publicPath = '';
-// var publicPath = 'http://localhost:8080/ppe/';
+// var publicPath = 'http://localhost:8080/dist/';
 
 module.exports = webpackMerge(baseConfig, {
     devtool: 'false',

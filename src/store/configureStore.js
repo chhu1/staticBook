@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { reduxReactRouter } from 'redux-router';
 import thunk from 'redux-thunk';
 import apis from '../middleware/apis';
+import apiLists from '../middleware/apiLists';
 import { createHistory } from 'history';
 import rootReducer from '../reducers';
 
@@ -9,7 +10,8 @@ export default function configureStore(routes) {
     const finalCreateStore = compose(
         applyMiddleware(
             thunk,
-            apis
+            apis,
+            apiLists
         ),
         reduxReactRouter({
             routes,

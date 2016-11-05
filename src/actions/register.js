@@ -9,17 +9,14 @@ export function registerUser(params) {
         [CALL_API]: Apis['userRegister']({
             types: [
                 (dispatch, getState) => {
-                    let payload = true;
-                    dispatch({ type: actionType.REGISTER_API_LOADING, payload });
+                    dispatch({ type: actionType.REGISTER_API_LOADING, payload: true });
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.REGISTER_API_LOADING, payload });
+                    dispatch({ type: actionType.REGISTER_API_LOADING, payload: false });
                     dispatch(push('/login'))
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.REGISTER_API_LOADING, payload });
+                    dispatch({ type: actionType.REGISTER_API_LOADING, payload: false });
                     simpleApiFailToast(dispatch, response);
                 }
             ],

@@ -10,17 +10,14 @@ export function loginUser(params) {
         [CALL_API]: Apis['userLogin']({
             types: [
                 (dispatch, getState) => {
-                    let payload = true;
-                    dispatch({ type: actionType.LOGIN_API_LOADING, payload });
+                    dispatch({ type: actionType.LOGIN_API_LOADING, payload: true });
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.LOGIN_API_LOADING, payload });
+                    dispatch({ type: actionType.LOGIN_API_LOADING, payload: false });
                     setUserInfomation(dispatch, response) && dispatch(push('/discovery'));
                 },
                 (dispatch, getState, response) => {
-                    let payload = false;
-                    dispatch({ type: actionType.LOGIN_API_LOADING, payload });
+                    dispatch({ type: actionType.LOGIN_API_LOADING, payload: false });
                     simpleApiFailToast(dispatch, response);
                 }
             ],
