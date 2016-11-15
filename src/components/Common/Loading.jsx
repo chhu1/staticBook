@@ -5,12 +5,7 @@ import './loading.scss';
 class Loading extends Component {
     render() {
         const { isShow } = this.props;
-        if (isShow) {
-            return (
-                <div className="loading"></div>
-            )
-        }
-        return null;
+        return isShow ? <div className="loading"></div> : null;
     }
 }
 

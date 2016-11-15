@@ -5,12 +5,7 @@ import './toast.scss';
 class Toast extends Component {
     render() {
         const { isShow, content } = this.props;
-        if (isShow) {
-            return (
-                <div className="toast">{ content }</div>
-            )
-        }
-        return null;
+        return isShow ? <div className="toast">{content}</div> : null;
     }
 }
 

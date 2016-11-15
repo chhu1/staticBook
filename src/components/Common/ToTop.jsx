@@ -32,12 +32,7 @@ class ToTop extends Component {
 
     render() {
         const { showToTop } = this.state;
-        if (showToTop) {
-            return (
-                <div className="to-top" onClick={this.handleToTopClick}>返回顶部</div>
-            )
-        }
-        return null;
+        return showToTop ? <div className="to-top" onClick={this.handleToTopClick}>返回顶部</div> : null;
     }
 }
 
