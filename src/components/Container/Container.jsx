@@ -1,4 +1,3 @@
-import pureRender from 'pure-render-decorator';
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -6,7 +5,6 @@ import { connect } from 'react-redux';
 import * as containerAction from '../../actions/container';
 import BottomNav from './BottomNav';
 
-@pureRender
 class Container extends Component {
     constructor() {
         super();
