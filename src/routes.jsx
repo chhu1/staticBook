@@ -8,7 +8,7 @@ import Login from './app/pages/Login/Login';
 function checkTokenInCookie(nextState, replace) {
     let token = getCookieValue('token');
     let userId = getCookieValue('userId');
-    // (!token || !userId) && (replace('/login'));
+    (!token || !userId) && (replace('/login'));
 }
 
 module.exports = (
