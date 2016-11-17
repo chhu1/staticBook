@@ -1,0 +1,13 @@
+@import '../../../static/css/base.scss';
+.to-top {
+    z-index: 8888;
+    position: fixed;
+    right: pxRem(20);
+    bottom: pxRem(20);
+    text-align: center;
+    padding: pxRem(20);
+    font-size: $font28;
+    color: $colFontWhite;
+    border-radius: pxRem(6);
+    background-color: $colBlue;
+}

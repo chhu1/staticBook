@@ -1,0 +1,45 @@
+@import '../../../static/css/base.scss';
+.loading {
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 1.6rem;
+    z-index: 9999;
+    position: fixed;
+    margin: -1rem -0.8rem;
+    border-radius: 0.16rem;
+    background: rgba(0, 0, 0, 0.6);
+    &:after {
+        top: 50%;
+        left: 50%;
+        content: '';
+        width: 0.533333rem;
+        height: 0.533333rem;
+        position: absolute;
+        margin: -0.266667rem;
+        background: url(../../../static/images/loading.png) center center no-repeat;
+        background-size: 0.533333rem 0.533333rem;
+        -webkit-animation: loadingplay 0.8s linear infinite;
+        animation: loadingplay 0.8s linear infinite;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes loadingplay {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes loadingplay {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}

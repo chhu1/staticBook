@@ -22,6 +22,7 @@ module.exports = webpackMerge(baseConfig, {
     output: {
         path: assetsPath,
         filename: '[hash].bundle.js',
+        chunkFilename: '[id].[hash:5].chunk.js',
         publicPath: publicPath
     },
     plugins: [
