@@ -16,30 +16,30 @@ module.exports = (
         <IndexRoute component={Login} />
         <Route path="login" component={Login} />
         <Route path="register" getComponent={
-            (nextState, callback) =>{ 
-                require.ensure([], (require) => { 
+            (nextState, callback) =>{
+                require.ensure([], (require) => {
                     callback(null, require('./app/pages/Register/Register').default)
                 })
             }
         } />
         <Route component={Container}>
             <Route path="discovery" onEnter={checkTokenInCookie} getComponent={
-                (nextState, callback) =>{ 
-                    require.ensure([], (require) => { 
+                (nextState, callback) =>{
+                    require.ensure([], (require) => {
                         callback(null, require('./app/pages/Discovery/Discovery').default)
                     })
                 }
             } />
             <Route path="news" onEnter={checkTokenInCookie} getComponent={
-                (nextState, callback) =>{ 
-                    require.ensure([], (require) => { 
+                (nextState, callback) =>{
+                    require.ensure([], (require) => {
                         callback(null, require('./app/pages/News/News').default)
                     })
                 }
             } />
             <Route path="mine" onEnter={checkTokenInCookie} getComponent={
-                (nextState, callback) =>{ 
-                    require.ensure([], (require) => { 
+                (nextState, callback) =>{
+                    require.ensure([], (require) => {
                         callback(null, require('./app/pages/Mine/Mine').default)
                     })
                 }
