@@ -13,4 +13,4 @@ const config = {
 let env = config['dev'];
 const apiDomain = env.apiDomain;
 
-export apiDomain;
+export { apiDomain };

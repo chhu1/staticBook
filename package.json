@@ -4,11 +4,11 @@
   "description": "This application is used to sell book to students",
   "main": "index.js",
   "scripts": {
+    "ppe": "gulp ppe",
+    "prod": "gulp prod",
     "dev": "babel-node ./server/dev.server.js",
-    "ppe": "webpack --verbose --colors --display-error-details --config ./webpack/ppe.config.js",
-    "prod": "webpack --verbose --colors --display-error-details --config ./webpack/prod.config.js",
-    "server": "babel-node ./server/prod.server.js",
     "start": "babel-node ./server/ppe.server.js",
+    "server": "babel-node ./server/prod.server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -61,6 +61,9 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.21.0",
     "node-sass": "^3.7.0",
     "raw-loader": "^0.5.1",
