@@ -4,7 +4,7 @@ import Apis from '../../../apis/apis';
 import actionType from '../../constant/actionType';
 import { simpleApiFailToast } from '../../utils/actions';
 
-export function getBookList() {
+export function getBookList(params) {
     return {
         [CALL_API]: Apis['getBookList']({
             types: [
@@ -19,7 +19,8 @@ export function getBookList() {
                     dispatch({ type: actionType.DISCOVER_BOOK_LIST_API_LOADING, payload: false });
                     simpleApiFailToast(dispatch, response);
                 }
-            ]
+            ],
+            params
         })
     }
 }

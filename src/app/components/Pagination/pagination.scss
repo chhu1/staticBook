@@ -1,0 +1,11 @@
+@import '../../../static/css/base';
+.pagination {
+    .pagination-loading {
+        text-align: center;
+        padding: pxRem(20);
+        img {
+            width: pxRem(48);
+            height: pxRem(48);
+        }
+    }
+}

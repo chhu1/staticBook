@@ -1,15 +1,7 @@
 @import '../../../static/css/base';
 .discovery {
     background-color: #efefef;
-    .page-loading {
-        text-align: center;
-        padding: pxRem(20);
-        img {
-            width: pxRem(48);
-            height: pxRem(48);
-        }
-    }
-    .wrap {
+    .discovery-scroll-wrap {
         padding: pxRem(20) pxRem(20) pxRem(88);
         .card {
             margin-bottom: pxRem(20);
