@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import { getCookieValue } from './utils/cookie';
 import Main from './app/containers/Main/Main';
 import Container from './app/containers/Container/Container';
+import BookContainer from './app/containers/BookContainer/BookContainer';
 import Login from './app/pages/Login/Login';
 
 function checkTokenInCookie(nextState, replace) {
@@ -41,6 +42,15 @@ module.exports = (
                 (nextState, callback) =>{
                     require.ensure([], (require) => {
                         callback(null, require('./app/pages/Mine/Mine').default)
+                    })
+                }
+            } />
+        </Route>
+        <Route path="bookcontainer/" component={BookContainer}>
+            <Route path="addbook" onEnter={checkTokenInCookie} getComponent={
+                (nextState, callback) =>{
+                    require.ensure([], (require) => {
+                        callback(null, require('./app/pages/AddBook/AddBook').default)
                     })
                 }
             } />

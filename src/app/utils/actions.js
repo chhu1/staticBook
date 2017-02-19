@@ -1,9 +1,14 @@
+import { replace } from 'redux-router';
 import { setCookie } from '../../utils/cookie';
 import { showSimpleToast } from '../containers/Main/action';
 
 export function simpleApiFailToast(dispatch, response) {
-    let content = response && response.errorMsg ? response.errorMsg : '';
-    content && dispatch(showSimpleToast({ content }));
+    if (response.errorCode == 10000) {
+        dispatch(replace('/login'));
+    } else {
+        let content = response && response.errorMsg ? response.errorMsg : '';
+        content && dispatch(showSimpleToast({ content }));
+    }
 }
 
 export function setUserInfomation(dispatch, response) {

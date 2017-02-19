@@ -1,6 +1,5 @@
 import assign from 'object-assign';
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as discoveryActions from './action';
@@ -38,7 +37,6 @@ class Discovery extends Component {
     }
 
     renderBookItem(item) {
-        console.log(item);
         return (
             <section className="card" key={item.bookId}>
                 <div className="card-top">
@@ -66,9 +64,13 @@ class Discovery extends Component {
 }
 
 Discovery.propTypes = {
+    isFirst: PropTypes.bool,
     bookList: PropTypes.array,
-    apiLoading: PropTypes.bool
-}
+    noMoreData: PropTypes.bool,
+    apiLoading: PropTypes.bool,
+    pageSize: PropTypes.number,
+    pageNumber: PropTypes.number
+};
 
 function mapStateToProps(state) {
     return state.discovery.toJS();
