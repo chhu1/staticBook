@@ -4,6 +4,7 @@ import main from './containers/Main/reducer';
 import container from './containers/Container/reducer';
 import register from './pages/Register/reducer';
 import login from './pages/Login/reducer';
+import addBook from './pages/AddBook/reducer';
 import discovery from './pages/Discovery/reducer';
 
 export default combineReducers({
@@ -11,6 +12,7 @@ export default combineReducers({
     main,
     register,
     login,
+    addBook,
     container,
     discovery
 });

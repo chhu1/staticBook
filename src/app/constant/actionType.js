@@ -15,5 +15,11 @@ export default keyMirror({
     CHANGE_BOTTOM_NAV: null,
     SET_BOTTOM_NAV_ACTIVE: null,
     DISCOVER_BOOK_LIST_API_LOADING: null,
-    SET_BOOK_LIST_STATE: null
+    SET_BOOK_LIST_STATE: null,
+    ADD_BOOK_API_LOADING: null,
+    ADD_BOOK_NAME_CHANGE: null,
+    ADD_BOOK_DESC_CHANGE: null,
+    ADD_BOOK_AUTHOR_CHANGE: null,
+    ADD_BOOK_COMPANY_CHANGE: null,
+    ADD_BOOK_CATEGORY_CHANGE: null
 });

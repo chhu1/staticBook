@@ -36,7 +36,7 @@ class Login extends Component {
         } else if (!passwordLength(password)) {
             actions.showSimpleToast({ content: '密码长度必须6至16位'});
         } else {
-            actions.loginUser({ email: email, password: password});
+            actions.loginUser({ email, password });
         }
     }
 

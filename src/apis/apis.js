@@ -5,7 +5,8 @@ import { getCookieValue } from '../utils/cookie';
 const API_SOURCE = {
     userRegister: { url: '/user/register.do', fetchType: 'post', noToken: true },
     userLogin: { url: '/user/login.do', fetchType: 'post', noToken: true },
-    getBookList: { url: '/book/list.do', fetchType: 'get' }
+    getBookList: { url: '/book/list.do', fetchType: 'get' },
+    addBook: { url: '/book/add.do', fetchType: 'post' }
 }
 
 function createApis() {
