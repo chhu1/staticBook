@@ -6,6 +6,23 @@ import * as AddBookActions from './action';
 import * as MainActions from '../../containers/Main/action';
 
 class AddBook extends Component {
+    static defaultProps = {
+        categoryIds: [
+            { id: 1, name: '小说' },
+            { id: 2, name: '经济学' }
+        ]
+    };
+
+    static propTypes = {
+        name: PropTypes.string,
+        desc: PropTypes.string,
+        author: PropTypes.string,
+        company: PropTypes.string,
+        categoryId: PropTypes.number,
+        apiLoading: PropTypes.bool,
+        actions: PropTypes.object
+    };
+
     constructor() {
         super();
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -66,23 +83,6 @@ class AddBook extends Component {
             </section>
         );
     }
-}
-
-AddBook.defaultProps = { 
-    categoryIds: [
-        { id: 1, name: '小说' },
-        { id: 2, name: '经济学' }
-    ]
-};
-
-AddBook.propTypes = {
-    name: PropTypes.string,
-    desc: PropTypes.string,
-    author: PropTypes.string,
-    company: PropTypes.string,
-    categoryId: PropTypes.number,
-    apiLoading: PropTypes.bool,
-    actions: PropTypes.object
 }
 
 function mapStateToProps(state) {

@@ -5,6 +5,7 @@
     "stage-2"
   ],
   "plugins": [
-    "babel-plugin-transform-decorators-legacy"
+    "babel-plugin-transform-decorators-legacy",
+    ["transform-class-properties", { "spec": true }]
   ]
 }
